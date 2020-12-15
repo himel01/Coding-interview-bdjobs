@@ -14,9 +14,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<JobInfo> infoArrayList;
     private RecyclerView recyclerView;
     private JobAdapter adapter;
-    private ArrayList<JobInfo> infoArrayList;
     private RetrofitInterface retrofitInterface;
 
     @Override
@@ -47,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        infoArrayList=new ArrayList<>();
         recyclerView=findViewById(R.id.jobRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        infoArrayList=new ArrayList<>();
+
     }
 }

@@ -1,6 +1,5 @@
 package com.example.jobhuntjava;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
-    private ArrayList<JobInfo> jobInfos;
+    private ArrayList<JobInfo> infoArrayList;
 
 
-    public JobAdapter(ArrayList<JobInfo> jobInfos) {
-        this.jobInfos = jobInfos;
+    public JobAdapter(ArrayList<JobInfo> infoArrayList) {
+        this.infoArrayList = infoArrayList;
     }
 
     @NonNull
@@ -32,7 +29,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-       JobInfo jobInfo= jobInfos.get(position);
+       JobInfo jobInfo= infoArrayList.get(position);
        holder.jobTitle.setText(jobInfo.getJobTitle());
        holder.companyName.setText(jobInfo.getJobDetails().getCompanyName());
        holder.deadline.setText(jobInfo.getDeadline());
@@ -43,7 +40,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return jobInfos.size();
+        return infoArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
