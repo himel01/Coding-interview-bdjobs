@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static String BASE_URL="http://corporate3.bdjobs.com/interviewtest/InterviewJson.json";
+    private static String BASE_URL="http://corporate3.bdjobs.com/interviewtest/InterviewJson.json/";
     private static ApiClient mInstance;
     private Retrofit retrofit;
 

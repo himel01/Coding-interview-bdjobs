@@ -16,11 +16,10 @@ import java.util.ArrayList;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     private ArrayList<JobInfo> jobInfos;
-    private Context context;
 
-    public JobAdapter(ArrayList<JobInfo> jobInfos, Context context) {
+
+    public JobAdapter(ArrayList<JobInfo> jobInfos) {
         this.jobInfos = jobInfos;
-        this.context = context;
     }
 
     @NonNull
