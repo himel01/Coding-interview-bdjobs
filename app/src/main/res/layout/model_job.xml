@@ -58,6 +58,7 @@
                     android:layout_margin="5dp"
                     android:textColor="@color/black"
                     android:id="@+id/experienceTV"/>
+
             </LinearLayout>
 
         </LinearLayout>
