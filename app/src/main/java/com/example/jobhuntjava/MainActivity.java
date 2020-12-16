@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        infoArrayList=new ArrayList<>();
         recyclerView=findViewById(R.id.jobRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        infoArrayList=new ArrayList<>();
+        jobLists=new JobList(infoArrayList);
 
     }
 }

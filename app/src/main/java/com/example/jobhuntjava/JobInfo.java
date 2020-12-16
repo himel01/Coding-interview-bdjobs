@@ -1,9 +1,12 @@
 package com.example.jobhuntjava;
 
+import com.google.gson.annotations.SerializedName;
+
 public class JobInfo {
     private String jobTitle;
     private String deadline;
-    private String recruitingCompanysProfile;
+    @SerializedName("recruitingCompany'sProfile")
+    private String recruitingCompaniesProfile;
     private JobDetails jobDetails;
     private String logo;
     private boolean IsFeatured;
@@ -12,10 +15,10 @@ public class JobInfo {
     private String minSalary;
     private String maxSalary;
 
-    public JobInfo(String jobTitle, String deadline, String recruitingCompanysProfile, JobDetails jobDetails, String logo, boolean isFeatured, int minExperience, int maxExperience, String minSalary, String maxSalary) {
+    public JobInfo(String jobTitle, String deadline, String recruitingCompaniesProfile, JobDetails jobDetails, String logo, boolean isFeatured, int minExperience, int maxExperience, String minSalary, String maxSalary) {
         this.jobTitle = jobTitle;
         this.deadline = deadline;
-        this.recruitingCompanysProfile = recruitingCompanysProfile;
+        this.recruitingCompaniesProfile = recruitingCompaniesProfile;
         this.jobDetails = jobDetails;
         this.logo = logo;
         IsFeatured = isFeatured;
@@ -33,8 +36,8 @@ public class JobInfo {
         return deadline;
     }
 
-    public String getRecruitingCompanysProfile() {
-        return recruitingCompanysProfile;
+    public String getRecruitingCompaniesProfile() {
+        return recruitingCompaniesProfile;
     }
 
     public JobDetails getJobDetails() {
