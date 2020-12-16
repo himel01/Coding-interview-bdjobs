@@ -15,6 +15,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<JobInfo> infoArrayList;
+    private JobList jobLists;
     private RecyclerView recyclerView;
     private JobAdapter adapter;
     private RetrofitInterface retrofitInterface;
@@ -29,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData() {
         retrofitInterface=new ApiClient().getInstance().getApi();
-        Call<ArrayList<JobInfo>> call=retrofitInterface.getData();
-        call.enqueue(new Callback<ArrayList<JobInfo>>() {
+        Call<JobList> call=retrofitInterface.getJobInfoArrayList();
+        call.enqueue(new Callback<JobList>() {
             @Override
-            public void onResponse(Call<ArrayList<JobInfo>> call, Response<ArrayList<JobInfo>> response) {
-                infoArrayList=response.body();
+            public void onResponse(Call<JobList> call, Response<JobList> response) {
+                jobLists=response.body();
                 adapter=new JobAdapter(infoArrayList);
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<ArrayList<JobInfo>> call, Throwable t) {
+            public void onFailure(Call<JobList> call, Throwable t) {
 
                 Toast.makeText(MainActivity.this, ""+t.getMessage(), Toast.LENGTH_LONG).show();
             }

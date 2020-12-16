@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface RetrofitInterface {
     @GET("InterviewJson.json")
-    Call<ArrayList<JobInfo>> getData();
+    Call<JobList> getJobInfoArrayList();
 
 }
