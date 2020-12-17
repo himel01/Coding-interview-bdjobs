@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     private JobList jobList;
@@ -34,7 +33,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
        holder.companyName.setText(jobInfo.getJobDetails().getCompanyName());
        holder.deadline.setText(jobInfo.getDeadline());
        holder.experience.setText(String.valueOf(jobInfo.getMinExperience()));
-       //holder.companyLogo.setImageResource(Integer.parseInt(jobInfo.getLogo()));
+      //holder.companyLogo.setImageBitmap(bmp);
 
     }
 
