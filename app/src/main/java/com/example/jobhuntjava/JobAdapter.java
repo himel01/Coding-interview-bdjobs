@@ -37,9 +37,9 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
        holder.deadline.setText(jobInfo.getDeadline());
        holder.experience.setText(String.valueOf(jobInfo.getMinExperience()));
 
-       if(jobInfo.getMinSalary()==" " && jobInfo.getMaxSalary()==" "){holder.salaryTV.setText("Negotiable");}
-       else if(jobInfo.getMinSalary()=="" && jobInfo.getMaxSalary()!=""){holder.salaryTV.setText(jobInfo.getMaxSalary()+" bdt");}
-       else if(jobInfo.getMaxSalary()!="" && jobInfo.getMaxSalary()==""){holder.salaryTV.setText(jobInfo.getMinSalary()+" bdt");}
+       if(jobInfo.getMinSalary().isEmpty() && jobInfo.getMaxSalary().isEmpty()){holder.salaryTV.setText("Negotiable");}
+       else if(jobInfo.getMinSalary().isEmpty() && !jobInfo.getMaxSalary().isEmpty()){holder.salaryTV.setText(jobInfo.getMaxSalary());}
+       else if(!jobInfo.getMinSalary().isEmpty() && jobInfo.getMaxSalary().isEmpty()){holder.salaryTV.setText(jobInfo.getMinSalary());}
        else {holder.salaryTV.setText(jobInfo.getMinSalary()+"-"+jobInfo.getMaxSalary());}
 
        if(jobInfo.isFeatured()==true)
