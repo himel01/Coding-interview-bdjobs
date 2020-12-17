@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     private JobList jobList;
@@ -36,7 +38,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
        holder.jobTitle.setText(jobInfo.getJobTitle());
        holder.companyName.setText(jobInfo.getJobDetails().getCompanyName());
        holder.deadline.setText(jobInfo.getDeadline());
-       holder.experience.setText(String.valueOf(jobInfo.getMinExperience()));
+       holder.experience.setText(String.valueOf(jobInfo.getMinExperience())+" years");
 
        if(jobInfo.getMinSalary().isEmpty() && jobInfo.getMaxSalary().isEmpty()){holder.salaryTV.setText("Negotiable");}
        else if(jobInfo.getMinSalary().isEmpty() && !jobInfo.getMaxSalary().isEmpty()){holder.salaryTV.setText(jobInfo.getMaxSalary());}
@@ -48,7 +50,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
            holder.isVerified.setText("Verified");
            holder.isVerified.setTextColor(context.getResources().getColor(R.color.green));
        }
-      //holder.companyLogo.setImageBitmap(bmp);
+        Picasso.with(context).load(jobInfo.getLogo()).fit().into(holder.companyLogo);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

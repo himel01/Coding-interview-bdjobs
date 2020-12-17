@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobHuntJava"
         android:usesCleartextTraffic="true">
-        <activity android:name=".JobDetailsActivity"></activity>
+        <activity android:name=".JobDetailsActivity"
+            android:label="Job Details"></activity>
         <activity
             android:name=".MainActivity"
             android:label="Job List">

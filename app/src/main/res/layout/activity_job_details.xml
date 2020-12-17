@@ -19,24 +19,36 @@
         android:id="@+id/titleTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
         android:textColor="#1A7DCC" />
 
     <TextView
         android:id="@+id/deadLineTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
         android:textColor="#B80441" />
 
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
         android:textColor="#1A7DCC" />
 
     <TextView
         android:id="@+id/instructionTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
         android:textColor="#1A7DCC" />
 
 </LinearLayout>

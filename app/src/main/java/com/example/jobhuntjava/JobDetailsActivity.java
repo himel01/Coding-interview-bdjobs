@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class JobDetailsActivity extends AppCompatActivity {
-    private String title,name,date,instruction;
+    private String title,name,date,instruction,first,last,newDate;
     private TextView titleTV,nameTV,dateTV,instructionTV;
 
     @Override
@@ -18,13 +18,18 @@ public class JobDetailsActivity extends AppCompatActivity {
         if(getIntent().getExtras()!=null)
         {
             title=getIntent().getExtras().getString("title");
-            name=getIntent().getExtras().getString("date");
-            date=getIntent().getExtras().getString("name");
+            date=getIntent().getExtras().getString("date");
+            name=getIntent().getExtras().getString("name");
             instruction=getIntent().getExtras().getString("instruction");
-            titleTV.setText(title);
-            nameTV.setText(name);
-            dateTV.setText(date);
-            instructionTV.setText(instruction);
+
+            first=date.substring(0,8);
+            last=date.substring(date.length()-5);
+            newDate=first.concat(",".concat(last));
+
+            titleTV.setText("Title: "+title);
+            nameTV.setText("Company: "+name);
+            dateTV.setText("Last Date: "+newDate);
+            instructionTV.setText("Instruction: "+instruction);
         }
     }
 
