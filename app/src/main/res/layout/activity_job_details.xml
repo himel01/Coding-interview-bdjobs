@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JobDetailsActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:onClick="back"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:fabSize="mini" />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#1A7DCC" />
+
+    <TextView
+        android:id="@+id/deadLineTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#B80441" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#1A7DCC" />
+
+    <TextView
+        android:id="@+id/instructionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#1A7DCC" />
+
+</LinearLayout>

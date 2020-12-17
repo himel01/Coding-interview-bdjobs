@@ -1,6 +1,7 @@
 package com.example.jobhuntjava;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,16 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
            holder.isVerified.setTextColor(context.getResources().getColor(R.color.green));
        }
       //holder.companyLogo.setImageBitmap(bmp);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Intent().putExtra("title",jobInfo.getJobDetails().getTitle());
+                new Intent().putExtra("date",jobInfo.getJobDetails().getLastDate());
+                new Intent().putExtra("name",jobInfo.getJobDetails().getCompanyName());
+                new Intent().putExtra("instruction",jobInfo.getJobDetails().getApplyInstruction());
+                context.startActivity(new Intent(context,JobDetailsActivity.class));
+            }
+        });
 
     }
 
