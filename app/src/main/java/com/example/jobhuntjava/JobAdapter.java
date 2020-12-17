@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
-    private ArrayList<JobInfo> infoArrayList;
+    private JobList jobList;
 
-
-    public JobAdapter(ArrayList<JobInfo> infoArrayList) {
-        this.infoArrayList = infoArrayList;
+    public JobAdapter(JobList jobList) {
+        this.jobList = jobList;
     }
 
     @NonNull
@@ -29,18 +28,19 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-       JobInfo jobInfo= infoArrayList.get(position);
+       //JobInfo jobInfo= infoArrayList.get(position);
+       JobInfo jobInfo=jobList.getJobInfoArrayList().get(position);
        holder.jobTitle.setText(jobInfo.getJobTitle());
        holder.companyName.setText(jobInfo.getJobDetails().getCompanyName());
        holder.deadline.setText(jobInfo.getDeadline());
-       holder.experience.setText(jobInfo.getMinExperience());
-       holder.companyLogo.setImageResource(Integer.parseInt(jobInfo.getLogo()));
+       holder.experience.setText(String.valueOf(jobInfo.getMinExperience()));
+       //holder.companyLogo.setImageResource(Integer.parseInt(jobInfo.getLogo()));
 
     }
 
     @Override
     public int getItemCount() {
-        return infoArrayList.size();
+        return jobList.getJobInfoArrayList().size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
