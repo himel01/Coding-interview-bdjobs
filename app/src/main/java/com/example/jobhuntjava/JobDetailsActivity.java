@@ -18,8 +18,8 @@ public class JobDetailsActivity extends AppCompatActivity {
         if(getIntent().getExtras()!=null)
         {
             title=getIntent().getExtras().getString("title");
-            name=getIntent().getExtras().getString("name");
-            date=getIntent().getExtras().getString("date");
+            name=getIntent().getExtras().getString("date");
+            date=getIntent().getExtras().getString("name");
             instruction=getIntent().getExtras().getString("instruction");
             titleTV.setText(title);
             nameTV.setText(name);

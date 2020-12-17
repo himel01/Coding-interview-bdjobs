@@ -52,11 +52,12 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Intent().putExtra("title",jobInfo.getJobDetails().getTitle());
-                new Intent().putExtra("date",jobInfo.getJobDetails().getLastDate());
-                new Intent().putExtra("name",jobInfo.getJobDetails().getCompanyName());
-                new Intent().putExtra("instruction",jobInfo.getJobDetails().getApplyInstruction());
-                context.startActivity(new Intent(context,JobDetailsActivity.class));
+                Intent intent=new Intent(context,JobDetailsActivity.class);
+                intent.putExtra("title",jobInfo.getJobDetails().getTitle());
+                intent.putExtra("date",jobInfo.getJobDetails().getLastDate());
+                intent.putExtra("name",jobInfo.getJobDetails().getCompanyName());
+                intent.putExtra("instruction",jobInfo.getJobDetails().getApplyInstruction());
+                context.startActivity(intent);
             }
         });
 
