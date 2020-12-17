@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="3">
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -67,6 +67,17 @@
                     android:textColor="#C61616"
                     android:layout_weight="1"
                     android:id="@+id/experienceTV"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                    android:layout_marginLeft="10dp"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="#C61616"
+                    android:layout_weight="1"
+                    android:id="@+id/salaryTV"/>
+
 
             </LinearLayout>
 
@@ -75,5 +86,11 @@
 
 
     </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/design_default_color_primary"/>
 
 </LinearLayout>

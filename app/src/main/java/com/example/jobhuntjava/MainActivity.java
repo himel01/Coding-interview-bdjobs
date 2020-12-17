@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<JobList> call, Response<JobList> response) {
                 jobLists=response.body();
-                adapter=new JobAdapter(jobLists);
+                adapter=new JobAdapter(jobLists,MainActivity.this);
                 recyclerView.setAdapter(adapter);
             }
 
